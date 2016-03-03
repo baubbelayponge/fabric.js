@@ -19578,8 +19578,10 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
      * Line height
      * @type Number
      * @default
+     *
+     * Using hardcoded value of chrome's
      */
-    lineHeight:           1.16,
+    lineHeight:           1.3/1.1171875,
 
     /**
      * Background color of text lines
@@ -19622,7 +19624,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
      * @type Number
      * @default
      */
-    _fontSizeMult:             1.13,
+    _fontSizeMult:             1.1171875,
 
     /**
      * Constructor
@@ -21434,7 +21436,7 @@ fabric.Image.filters.BaseFilter = fabric.util.createClass(/** @lends fabric.Imag
         }
       }
       this.__maxFontHeights[lineIndex] = maxHeight;
-      this.__lineHeights[lineIndex] = maxHeight * this.lineHeight * this._fontSizeMult;
+      this.__lineHeights[lineIndex] = Math.round(maxHeight * this.lineHeight * this._fontSizeMult);
       return this.__lineHeights[lineIndex];
     },
 

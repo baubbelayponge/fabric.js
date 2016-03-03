@@ -1046,7 +1046,7 @@
         }
       }
       this.__maxFontHeights[lineIndex] = maxHeight;
-      this.__lineHeights[lineIndex] = maxHeight * this.lineHeight * this._fontSizeMult;
+      this.__lineHeights[lineIndex] = Math.round(maxHeight * this.lineHeight * this._fontSizeMult);
       return this.__lineHeights[lineIndex];
     },
 
